@@ -11,6 +11,7 @@
 <br/>
 <c:choose>
     <c:when test="${sessionScope.user==null}">
+        <h3>网站当前在线人数：<span style="color:cornflowerblue;">${countMsg}</span></h3>
         <a href="${pageContext.request.contextPath}/login.jsp">用户登录</a>
     </c:when>
     <c:otherwise>

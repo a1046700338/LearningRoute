@@ -1,0 +1,31 @@
+body{
+	margin: 0;
+	padding: 0;
+	background-color: #808080;
+}
+div{
+	position: relative;
+
+}
+#container{
+	border: 0px solid blue;
+	width: 90%;
+	height: 100%;
+	margin-left: 5%;
+	float: left;
+
+}
+#tbl_fruit{
+	width: 60%;
+	text-align: center;
+	line-height: 30px;
+	margin: 0 auto;
+	margin-top: 80px;
+	background-color: #fff;
+}
+#tbl_fruit,tr,th,td{
+	border: 1px solid blueviolet;
+	border-collapse: collapse;
+	font-size: 16px;
+	font-family: "微软雅黑";
+}

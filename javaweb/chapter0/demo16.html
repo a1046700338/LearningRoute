@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>javascript开始学习4</title>
+		<script type="text/javascript">
+			/**
+			 * 强制类型转换
+			 * 
+			 */
+			
+			//方法一，调用被转换类型的toString()方法
+			//toString()方法有局限性，不能转null和undefined
+			var a = 123;
+			var b = a.toString();//转换为number类型
+			console.log(b);
+			
+			//方法二
+		    a = 123
+			console.log(typeof a);//number
+			a = "我"
+			console.log(typeof a);//string
+			a = true;
+			console.log(typeof a);//boolean
+			a = null;
+			console.log(typeof a);//object
+			
+			//字符串转数值，如果字符串中有非法的则是NaN，如果字符串为空则转换成0
+			var c = "123";
+			c = Number(c);
+			console.log(typeof c);
+			//true1,false0
+			c = true;
+			c = Number(c);
+			console.log(typeof c);
+			c = false;
+			c = Number(c);
+			console.log(typeof c);
+			//null 0
+			c = null;
+			c = Number(c);
+			console.log(typeof c);
+			//undefined NaN
+			c = undefined;
+			c = Number(c);
+			console.log(typeof c);
+			
+			//parseInt(),parseFloat()
+			a = "123px";
+			a = parseInt(a);
+			//parsetInt 只能取整数
+			a = "123.456.789abc"
+			a = parseFloat(a);
+			
+			
+		</script>
+	</head>
+	<body>
+		<h1>强制类型转换</h1>
+		<code>
+			/*
+			*parseInt(a,10),10表示进值
+			*/
+			var a = "070";
+			b = parseInt(a,10);
+			console.log(b);
+		</code>
+		<p>调用Boolean函数转换为布尔值</p>
+		<code>
+			/*字符串-->布尔，除了空字符串其余都是true
+			*对象也会转换为true
+			*除了0和NaN,其余都是true
+			*null和undefined都会转换为false
+			*/
+			var a = -127;
+			a = 127;
+			a = 0;
+			b = null;
+			b = Boolean(b);//false
+			c = undefined;
+			c = Boolean(c);//false
+			a = Boolean(a);
+			console.log(a);
+		</code>
+	</body>
+</html>

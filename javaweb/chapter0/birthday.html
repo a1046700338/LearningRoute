@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>祝你生日快乐</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(43, 52, 82);
+        }
+        .text{
+            font-family: 'fangsong';
+            display: inline-block;
+            position: relative;
+            font-size: 40px;
+            height: 60px;
+            line-height: 60px;
+            color: rgb(245, 245, 245);
+        }
+        .text::after{
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 5px;
+            height: 50px;
+            width: 3px;     
+            background-color: #fff;
+            animation: san 0.5s steps(1) infinite;
+        }
+        @keyframes san{
+            0%,100%{
+                background-color: #fff;
+            }
+            50%{
+               background-color: transparent;
+            }
+
+        }
+        @keyframes myfirst
+        {
+            from {background: red;}
+            to {background: yellow;}
+        }
+        div{
+            width: 500px;
+            height: 500px;
+            animation: myfirst 2s;/*animation动画属性*/
+        }
+        .box1{
+
+        }
+		audio{
+			display: none;
+		}
+    </style>
+</head>
+<body>
+    <h1>
+        <span class="text" ></span>
+    </h1>
+	<audio id="myAudio" autoplay="autoplay" loop="loop">
+	  <source src="../res/chaojimingan.mp3" type="audio/mp3" />
+	<embed height="100" width="100" src="../res/chaojimingan.mp3" />
+	</audio>
+    <!--具体实现思路：盒子，几个盒子叠出3d效果，然后贴图，做成礼盒样式，
+        然后再加animation做出礼盒抖动效果，最后鼠标点击事件，爆出🎉-->
+    <div></div>
+    <script>
+        const text = document.querySelector('.text');
+        const txt  =["初晴","祝你生日快乐","希望你天天开心"]; 
+        
+        var index=0;
+        var xiaBiao= 0;
+        var huan = true;
+     
+        setInterval(function(){
+           
+            if(huan){      
+                text.innerHTML = txt[xiaBiao].slice(0,++index);
+                console.log(index);
+            }
+            else{
+                text.innerHTML = txt[xiaBiao].slice(0,index--);
+                console.log(index);
+            }
+
+            if(index==txt[xiaBiao].length+3)
+            {
+                huan = false;
+            }
+            else if(index<0)
+            {
+                index = 0;
+                huan = true;
+                xiaBiao++;
+                if(xiaBiao>=txt.length)
+                {
+                    xiaBiao=0; 
+                }
+            }
+
+        },200)
+
+        /*function(click_me){
+            onclick();
+        }*/
+		document.getElementById("myAudio").volume = 0.5;//音量调节函数
+    </script>
+</body>
+</html>

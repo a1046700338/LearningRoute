@@ -1,0 +1,58 @@
+<!-- <!DOCTYPE html> -->
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>css盒子模型2</title>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+			background-color: #808080;
+		}
+		div{
+			position: relative;
+
+		}
+		#top{
+			background-color: red;
+			height: 20%;
+			float: top;
+		}
+		#left{
+			background-color: green;
+			float: left;
+			width: 15%;
+			height: 80%;
+
+		}
+		#main{
+			background-color: blue;
+			float: left;
+			width: 85%;
+			height: 70%;
+		}
+		#bottom{
+			background-color: #ff0;
+			float: left;
+			width: 85%;
+			height: 10%;
+		}
+		#container{
+			width: 90%;
+			height: 100%;
+			margin-left: 5%;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="top">top</div>
+		<div id="left">left</div>
+		<div id="main">main</div>
+		<div id="bottom">bottom</div>
+	</div>
+</body>
+
+</html>
+<!-- 老版本html布局 -->

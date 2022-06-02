@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>javascript开始学习5</title>
+		<script type="text/javascript">
+			alert("null");
+		</script>
+	</head>
+	<body>
+		<h1>运算符</h1>
+		<code>
+			var a = 123;
+			var result = typeof a;
+			console.log(result);
+			
+		</code>
+		<h2>算术运算符</h2>
+		<p>可以对两个值进行运算，并将结果返回</p>
+		<code>
+			/*
+			*true 1,false 0
+			*任何值和字符串相加都会转换成字符串，其余运算符都是转换成Number类型
+			*/
+			var result = 123+456;
+			console.log(result);
+			result = true + 1;
+			console.log(result);//2，true当成1
+			result = 2 + null;
+			console.log(result);//2，
+			result = 2 + NaN;
+			console.log(result);//NaN，任何值和NaN做运算都得NaN
+			var str = "Hello" + "World!";
+			console.log(str);//"HelloWorld!"
+			var a = 123 + "东东萨基我那是在赛";
+			console.log(a);//"123东东萨基我那是在赛"
+			var result = 1 + 2 + "3";
+			console.log("result" + result);//"33"
+		</code>
+		<p>隐式类型转换</p>
+		<code>
+			var a = 1 + "";
+			console.log(a);//"1"，本质上和String函数一样
+			/*
+			*任何值做 - * / 运算时都会自动转换为Number类型，和Number函数一样
+			*/
+		   var b = "123" - 1;
+		   console.log(b);//122，转换成Number类型
+		</code>
+	</body>
+</html>

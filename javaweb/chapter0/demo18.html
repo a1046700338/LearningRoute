@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>javascript开始学习6</title>
+	</head>
+	<body>
+		<h1>一元运算符</h1>
+		<p>只需要一个操作数，正号不会对变量产生影响，负号会对变量取反</p>
+		<code>
+			var a = 22;
+			a = -a;
+			console.log(a);//-22
+		</code>
+		<p>一元运算符会先转换成Number类型</p>
+		<code>
+			var b = 1 + +"2" + 3;
+			console.log(b);//6，1+2+3
+		</code>
+	</body>
+</html>

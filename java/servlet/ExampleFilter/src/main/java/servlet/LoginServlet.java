@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
                 cookie.setPath(request.getContextPath());
                 response.addCookie(cookie);
             }
-            response.sendRedirect("/index.jsp");
+            response.sendRedirect(request.getContextPath()+"/index.jsp");
         }else{
             request.setAttribute("errorMsg","用户名或密码错误");
             request.getRequestDispatcher("/login.jsp").forward(request,response);

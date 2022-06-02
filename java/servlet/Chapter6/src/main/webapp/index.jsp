@@ -8,14 +8,18 @@
 <h1><%= "Hello World!" %>
 </h1>
 <br/>
-<form action="/" method="get">
+<form action="${pageContext.request.contextPath}/index.jsp" method="get">
     爱喝：<input type="text" name="drink"><br/>
     爱吃：<br/>
-    冰淇淋<input type="checkbox" value="1">
-    泡芙<input type="checkbox" value="2">
+    冰淇淋<input type="checkbox" value="冰淇淋" name="eat">
+    泡芙<input type="checkbox" value="泡芙" name="eat"><br/>
+    <input type="submit" value="提交">
+    <input type="reset" value="重置">
+    <hr/>
+    爱喝的是：${param.drink}<br/>
+    爱吃的是：${param.eat}
 </form>
 
-<%=request.getAttribute("drink")%>
 <a href="${pageContext.request.contextPath}/user.jsp">user页</a>
 </body>
 </html>

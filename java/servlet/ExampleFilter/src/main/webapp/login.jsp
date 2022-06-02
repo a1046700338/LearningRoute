@@ -15,7 +15,7 @@
     姓名<input type="text" name="username"><br/>
     密码<input type="text" name="password"><br/>
     <input type="submit" value="登录">
-    自动登录<input type="radio" name="autologin">
+    自动登录<input type="radio" value="${60}" name="autologin">
     <p style="color: red">${errorMsg}</p>
 </form>
 </body>

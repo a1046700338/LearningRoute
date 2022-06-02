@@ -15,7 +15,7 @@
     </c:when>
     <c:otherwise>
         <h1>欢迎用户&nbsp;${sessionScope.user.username}!</h1>
-        <a href="${pageContext.request.contextPath}/LgoutServlet">注销</a>
+        <a href="${pageContext.request.contextPath}/LogoutServlet">注销</a>
     </c:otherwise>
 </c:choose>
 <hr/>

@@ -11,7 +11,7 @@
     <title>用户登录</title>
 </head>
 <body>
-<form action="" method="post">
+<form action="${pageContext.request.contextPath}/LoginServlet" method="post">
     姓名<input type="text" name="username"><br/>
     密码<input type="text" name="password"><br/>
     <input type="submit" value="登录">

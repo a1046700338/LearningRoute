@@ -6,5 +6,5 @@ open source
 
 ## 我提供了一个可在线访问的服务器
 任何人都可以访问这个网站，预览JavaWeb应用最终的展现效果  
-[点我](http://gmv8uh.natappfree.cc/)  
+[点我](http://qg74ym.natappfree.cc/)  
 ps:由于这是个人搭建的服务器，承载量可能不是很大，动手轻点><

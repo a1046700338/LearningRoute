@@ -78,15 +78,6 @@ a {
 	color: rgb(70, 184, 218);
 }
 
-.post {
-	display: flex;
-	display: -webkit-flex;
-	/* Safari */
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-}
-
 .main {
 	margin-top: 500px;
 	margin-bottom: 20px;
@@ -125,4 +116,11 @@ a {
 }
 .box p{
 	font-size: 22px;
+}
+
+.post {
+	margin-top: 0px;
+	width: 200px;
+	background-color: rgba(21,211,12,0.3);
+	text-align: center;
 }

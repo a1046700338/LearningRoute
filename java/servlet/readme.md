@@ -6,6 +6,7 @@ open source
 
 ## 我提供了一个可在线访问的服务器
 任何人都可以访问这个网站，预览JavaWeb应用最终的展现效果  
+动态域名随时会刷新，因此访问不了可能是域名原因  
 [点我](http://qg74ym.natappfree.cc/) 这个网址后加上项目名就可以访问每一个JavaWeb  
 例如：  
 `http://qg74ym.natappfree.cc/` + `Chapter6` => `http://qg74ym.natappfree.cc/Chapter6`  

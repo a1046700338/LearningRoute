@@ -7,7 +7,7 @@
 <body>
 <a href="" ></a>
 <h1>文件上传与下载</h1>
-<form action="/UploadServlet" enctype="multipart/form-data" method="post">
+<form action="${pageContext.request.contextPath}/UploadServlet" enctype="multipart/form-data" method="post">
     <table width="600px">
         <tr>
             <th>上传者</th>
@@ -22,6 +22,6 @@
         </tr>
     </table>
 </form>
-<a href="/download.jsp">文件下载</a>
+<a href="${pageContext.request.contextPath}/download.jsp">文件下载</a>
 </body>
 </html>

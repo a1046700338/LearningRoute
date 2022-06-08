@@ -1,17 +1,13 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: sakurafeiyu
-  Date: 2022/6/5
-  Time: 17:28
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>下载界面</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>文件下载</title>
 </head>
 <body>
-<h1>文件下载界面</h1>
-
+<a href="http://localhost:8080/chapter09/DownloadServlet?filename=1.png">
+    文件下载</a>
 </body>
 </html>

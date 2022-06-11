@@ -1,5 +1,6 @@
 package servlet;
 import java.io.*;
+import java.net.URLEncoder;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -8,27 +9,44 @@ public class DownloadServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     public void doGet(HttpServletRequest request, HttpServletResponse
             response) throws ServletException, IOException {
-        //设置ContentType字段值
         response.setContentType("text/html;charset=utf-8");
-        //获取所要下载的文件名称
-        String filename = request.getParameter("filename");
-        //下载文件所在目录
-        String folder = "/download/";
-        // 通知浏览器以下载的方式打开
-        response.addHeader("Content-Type", "application/octet-stream");
-        response.addHeader("Content-Disposition",
-                "attachment;filename="+filename);
-        folder=folder+filename;
-        // 通过文件流读取文件
-        InputStream in = getServletContext().getResourceAsStream(folder);
-        // 获取response对象的输出流
-        OutputStream out = response.getOutputStream();
-        byte[] buffer = new byte[1024];
-        int len;
-        //循环取出流中的数据
-        while ((len = in.read(buffer)) != -1) {
-            out.write(buffer, 0, len);
+        String fileName = request.getParameter("filename");
+        System.out.println(fileName);
+        fileName = new String(fileName.getBytes("iso8859-1"), "UTF-8");
+        // 上传的文件都是保存在/WEB-INF/upload目录下的子目录当中
+        String fileSaveRootPath = this.getServletContext().getRealPath("/WEB-INF/upload");
+        // 得到要下载的文件
+        File file = new File(fileSaveRootPath + "\\" + fileName);
+        // 如果文件不存在
+        if (!file.exists()) {
+            request.setAttribute("message", "您要下载的资源已被删除！！");
+            request.getRequestDispatcher("/download.jsp").forward(request, response);
+            return;
         }
+        // 设置响应头，控制浏览器下载该文件
+
+        // 设置文件MIME类型
+        response.setHeader("content-disposition", "attachment;filename=" + URLEncoder.encode(fileName, "UTF-8"));
+        FileInputStream in = new FileInputStream(file);
+
+        OutputStream out = response.getOutputStream();
+
+
+
+        byte buffer[] = new byte[1024];
+
+        int len = 0;
+
+        while ((len = in.read(buffer)) > 0) {
+
+            out.write(buffer, 0, len);
+
+        }
+
+        in.close();
+
+        out.close();
+
     }
     public void doPost(HttpServletRequest request, HttpServletResponse
             response) throws ServletException, IOException {

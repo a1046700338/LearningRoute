@@ -42,7 +42,7 @@ public class UploadServlet extends HttpServlet {
                 if (fileitem.isFormField()) {
                     // 获得字段名和字段值
                     String name = fileitem.getFieldName();
-                    if(name.equals("name")){
+                    if(name.equals("myfile")){
                         //如果文件不为空，将其保存在value中
                         if(!fileitem.getString().equals("")){
                             String value = fileitem.getString("utf-8");

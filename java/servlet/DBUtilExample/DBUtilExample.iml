@@ -29,5 +29,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.5.6" level="project" />
+    <orderEntry type="library" name="Maven: commons-dbutils:commons-dbutils:1.7" level="project" />
+    <orderEntry type="library" name="Maven: cn.hutool:hutool-all:5.5.8" level="project" />
   </component>
 </module>

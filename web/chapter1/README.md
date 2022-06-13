@@ -1,7 +1,7 @@
 # 文件路径
 ```
 *
-|-----javaweb
+|-----web
 |           |-------chapter1
 |           |              |------demo1.html
 |           |-------chapterxxx

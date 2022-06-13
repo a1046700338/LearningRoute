@@ -4,7 +4,7 @@ web学习库，存放各类html文件
 # 文件路径
 ```
 *
-|-----javaweb
+|-----web
 |           |-------chapter1
 |           |              |------demo1.html
 |           |-------chapterxxx

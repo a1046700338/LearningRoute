@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>构造函数</title>
+</head>
+<body>
+    <h1></h1>
+    <p></p>
+    <script>
+        /*
+        * 创建狗的对象
+        * 使用工厂方法创建的对象，使用的构造函数都是object
+        */
+       function createDog(name,age){
+            var obj = new Object();
+            obj.name = name;
+            obj.age = age;
+            obj.sayHello = function(){
+                alert(`汪汪！`);
+            };
+            return obj;
+       }
+       var dog = createDog('旺财',10);
+       console.log(dog);
+       /*
+       * 创建一个构造函数，专门用来创建Person对象
+       * 构造函数就是一个普通的函数，创建方式和普通函数没有区别
+       * 不同的是构造函数习惯上首字母大写。
+       */
+      function Person(){
+
+      }
+      //普通函数直接调用，构造函数需要使用new关键字来进行调用。
+      // var per = Person();
+      var per = new Person();
+
+      
+    </script>
+</body>
+</html>

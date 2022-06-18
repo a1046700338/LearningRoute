@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组</title>
+    <script type="text/javascript">
+        /*  数组（Array）
+         *  数组也是一个对象，数组是特殊类型的对象。
+         *  它和普通对象功能类似，也是存储一些值，
+         *  不同的是普通对象是使用字符串作为属性名，
+         *  而数组是使用数字来作为索引操作元素
+         *
+         */
+        //创建数组对象
+        let arr = [];
+        //向数组中添加元素
+        arr[0] = "h";
+        var cars = ["Saab", "Volvo", "BMW"];
+        var x = cars.length;   // length 属性返回元素的数量
+        var y = cars.sort();   // sort() 方法对数组进行排序
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        fruits.length;// fruits 的长度是4
+        var first = fruits[0];//访问第一个数组元素
+        var last = fruits[fruits.length - 1];//访问最后一个数组元素
+        fruits.push("Lemon");//使用push()方法，向 fruits 添加一个新元素 (Lemon)，数组最后添加元素，并返回新的数组长度
+        fruits.unshift("我是第一个元素");//unshift()方法，向数组开头添加一个或多个元素，并返回新的数组长度
+        fruits.shift();//shift()方法，删除数组第一个元素，并返回删除元素
+        fruits.pop();//pop()方法，删除数组最后一个元素，并返回删除元素
+    </script>
+</head>
+<body>
+    <h1>JavaScript 数组</h1>
+
+    <p>遍历数组的最佳方法是使用标准的 for 循环：</p>
+    
+    <p id="demo"></p>
+    
+    <script>
+    var fruits, text, fLen, i;
+    fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fLen = fruits.length;
+    
+    text = "<ul>";
+    for (i = 0; i < fLen; i++) {
+      text += "<li>" + fruits[i] + "</li>";
+    }
+    text += "</ul>";
+    
+    document.getElementById("demo").innerHTML = text;
+    </script>
+</body>
+</html>

@@ -30,14 +30,31 @@
        * 构造函数就是一个普通的函数，创建方式和普通函数没有区别
        * 不同的是构造函数习惯上首字母大写。
        */
-      function Person(){
+      function Person(){//无参构造函数
 
       }
       //普通函数直接调用，构造函数需要使用new关键字来进行调用。
       // var per = Person();
       var per = new Person();
+      function Person(name,age){
+        this.name = name;
+        this.age = age;
+        // this.sayHello  = function(){
+        //     //sayHello函数重复调用，浪费，解决方法从全局作用域里调用
+        //     alert(`hello`+this.name);
+        // }
+        this.sayHello = fun;
+      }
+      /*将sayHello方法在全局作用域中定义
+      * 但是将函数定义在全局作用域中，污染了全局作用域的命名空间
+      * 引入下一demo，demo21原型对象
+      */
+      function fun(){
+        alert(`hello `+this.name);
+      }
+      var per2 = new Person(`小明`,18);
+      console.log(per2);
 
-      
     </script>
 </body>
 </html>

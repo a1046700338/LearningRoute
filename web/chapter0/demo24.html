@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组练习</title>
+    <script>
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        let per1 = new Person("孙悟空",18);
+        let per2 = new Person("牛魔王",38);
+        let per3 = new Person("白骨精",16);
+        let arr = [per1,per2,per3];
+        function getAb(arr){
+            let newArr = [];
+            for(let i = 0; i < arr.length; i++){
+                let p = arr[i];
+                if(p.age >= 18){
+                    newArr.push(p);
+                }
+            }
+            return newArr;
+        }
+        let log = getAb(arr);
+        console.log(log);
+        //forEach()方法
+        //传递三个参数
+        
+        arr.forEach(function(a,b,c){
+            console.log(a+b+c);
+        })
+    </script>
+</head>
+<body>
+    <h1>数组练习</h1>
+    
+   
+</body>
+</html>

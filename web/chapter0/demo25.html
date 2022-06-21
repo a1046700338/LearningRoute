@@ -4,7 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title></title>
+    <script>
+        /*
+         *  call()和apply()方法
+         *  -   这两个方法都是函数对象的方法，需要通过函数对象来调用
+         *  -   当对函数调用call()和apply()方法，都会调用函数执行。效果都是一样的
+         *  -   可以修改函数执行时的上下文对象
+         * 
+         *  this的情况
+         *  -   1.以函数形式调用时，this永远都是window
+         *  -   2.以方法调用时，this是调用方法的对象
+         *  -   3.以构造函数调用，this是新创建的那个对象
+         *  -   4.使用call()和apply()方法,this是指定的对象
+         * 
+         */
+
+        function fun(a,b){
+            // alert(this);
+            alert("a="+a,"b="+b);
+        }
+        let obj = {
+            name:"obj",
+            sayName:function(){
+                alert(this.name);
+            }
+        };
+        let obj2 = {
+            name:"obj2"
+        }
+        fun.call(obj,2,3);
+        fun.apply(obj,[2,3]);
+    </script>
 </head>
 <body>
     

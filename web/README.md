@@ -5,19 +5,21 @@ web学习库，存放各类html文件
 ```
 *
 |-----web
-|           |-------chapter1
-|           |              |------demo1.html
-|           |-------chapterxxx
-|           |              |------demoxxx.html
-|           |-------css
-|           |         |------demo1.css
-|           |         |------demoxxx.css
-|           |
-|           |-------js
-|           |
-|           |-------package
-|           |
-|           |-------ppt
+|      |-------chapter0
+|      |              |------demo1.html
+|      |-------chapter1
+|      |              |------demo1.html
+|      |-------chapterxxx
+|      |              |------demoxxx.html
+|      |-------css
+|      |         |------demo1.css
+|      |         |------demoxxx.css
+|      |
+|      |-------js
+|      |
+|      |-------package
+|      |
+|      |-------ppt
 |
 |
 |-----------------------------------------------------|
@@ -40,7 +42,7 @@ web学习库，存放各类html文件
   * [VUE](https://sakurafeiyu.top/docs/#/zh-cn/vue.md)
   * more...
   * TODO
-    - [] [尚硅谷JS入门到精通](https://www.bilibili.com/video/BV1YW411T7GX?p=72)
+    - [] [尚硅谷JS入门到精通](https://www.bilibili.com/video/BV1YW411T7GX?p=80)
     - [] [学习VUE2]()
     - [] [尚硅谷Mysql](https://www.bilibili.com/video/BV1iq4y1u7vj?p=5)
     - [] [尚硅谷JDBC](https://www.bilibili.com/video/BV1eJ411c7rf?p=6&spm_id_from=pageDriver)

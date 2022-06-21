@@ -19,7 +19,7 @@
         arr[0] = "h";
         var cars = ["Saab", "Volvo", "BMW"];
         var x = cars.length;   // length 属性返回元素的数量
-        var y = cars.sort();   // sort() 方法对数组进行排序
+        var y = cars.sort();   // sort() 方法对数组进行排序，与之相反的reverse()方法是对数组进行降序排序
         var fruits = ["Banana", "Orange", "Apple", "Mango"];
         fruits.length;// fruits 的长度是4
         var first = fruits[0];//访问第一个数组元素
@@ -28,6 +28,20 @@
         fruits.unshift("我是第一个元素");//unshift()方法，向数组开头添加一个或多个元素，并返回新的数组长度
         fruits.shift();//shift()方法，删除数组第一个元素，并返回删除元素
         fruits.pop();//pop()方法，删除数组最后一个元素，并返回删除元素
+        /*  slice()方法，该方法不会改变元素数组，而是截取到的元素封装到一个新数组中返回
+         *  arr.slice(x,y)  参数x：截取开始的元素索引，包含开始索引，参数y：截取结束的元素索引，不包含结束索引，左闭右开
+         *  splice()方法，会对原数组产生影响，并将被删除的元素返回
+         *  第一个表示开始位置的索引，第二个参数表示删除的数量，第三个及以后可以传递一些新的元素，这些元素会自动插入到开始位置索引前。
+         *  arr.splice(1,1,"xxx","xxx","...")
+         * 
+         *  concat()方法，合并数组方法，不会更改原数组，它会返回一个新数组
+         *  var arr1 = ["Cecilie", "Lone"];
+         *  var arr2 = ["Emil", "Tobias", "Linus"];
+         *  var arr3 = ["Robin", "Morgan"];
+         *  var myChildren = arr1.concat(arr2, arr3);将arr1、arr2 与 arr3 连接在一起
+         * 
+         */
+
     </script>
 </head>
 <body>

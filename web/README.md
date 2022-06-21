@@ -26,10 +26,8 @@ web学习库，存放各类html文件
 
 
 ```
-# 地址
-- **Github**:`https://sakurafeiyu.top/javaweb/ 或  http://a1046700338.github.io/javaweb/`
-- **Gitee**:`http://sakurafeiyu.gitee.io/javaweb`
-
+# 项目地址
+- **[Github](https://github.com/a1046700338/LearningRoute/)**: `https://github.com/a1046700338/LearningRoute/`  
 
 # 联系方式
 📫[Email me](mailto:sakurafeiyu666@163.com)|😸[MyGitHub](https://github.com/a1046700338)
@@ -44,20 +42,7 @@ web学习库，存放各类html文件
   * TODO
     - [] [尚硅谷JS入门到精通](https://www.bilibili.com/video/BV1YW411T7GX?p=80)
     - [] [学习VUE2]()
-    - [] [尚硅谷Mysql](https://www.bilibili.com/video/BV1iq4y1u7vj?p=5)
-    - [] [尚硅谷JDBC](https://www.bilibili.com/video/BV1eJ411c7rf?p=6&spm_id_from=pageDriver)
 
-* [尚硅谷Java快速学习路线图](https://www.bilibili.com/read/cv5216534?spm_id_from=333.788.b_636f6d6d656e74.8)
-* 后端
-  * [Java](https://www.bilibili.com/video/BV1Kb411W75N?p=50)
-    * [JavaWeb]()
-    * [JVM]()
-    * [Spring]()
-    * [SpringMVC]()
-
-  * [Python]()
-* 操作系统
-  * [Linux]()  
 * [更多详情可以访问](https://sakurafeiyu.top/docs/#/about.md)
 
 

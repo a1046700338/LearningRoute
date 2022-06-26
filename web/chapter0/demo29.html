@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js事件</title>
+</head>
+<body>
+    <button id="btn">不要点我</button>
+    <script>
+        //绑定一个单击事件绑定函数,称为单击响应函数
+        let btn = document.getElementById("btn");
+        btn.onclick = function(){
+            alert("都叫了不要点我啦><");
+        }
+    </script>
+</body>
+</html>

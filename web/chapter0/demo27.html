@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式</title>
+    <script>
+        /*
+         *  任意数字字母    @   任意数字字母    .   任意数字字母
+         *  
+         * 
+         */
+        var emailReg = /^\w{3,}(\.\w+)*@[a-zA-Z0-9]+(\.[a-zA-Z0-9]{2,8}){1,2}/;
+        var email = "abc@abc.com"
+        console.log(emailReg.test(email));
+        //未完待续...
+    </script>
+</head>
+<body>
+    <h1>正则表达式</h1>
+    <p>将字符串通过规则执行匹配</p>
+</body>
+</html>

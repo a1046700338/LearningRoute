@@ -25,8 +25,11 @@
 - [demo24](demo24.html)  
 - [demo25](demo25.html)  
 - [demo26](demo26.html)  
-
+- [demo27](demo27.html)  
+- [demo28](demo28.html)  
+- [demo29](demo29.html)  
+- [DOM操作练习](demo30.html)  
 
 # 说明
 re·从<b>零</b>开始的前端  
-从demo12到demo26是js学习过程
+从demo12到demo30是js学习过程

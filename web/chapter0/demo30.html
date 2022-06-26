@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+        }
+        .le{
+            /* none */
+        }
+        .ri{
+            /* none */
+        }
+        .container{
+            display: flex;
+            height: 500px;
+            width: auto;
+            margin: 0 auto;
+        }
+        .main {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .leftbox {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .leftbox li {
+            display: inline-block;
+            list-style: none;
+            padding-left: 10px;
+        }
+
+        .boder {
+            border: 1px solid black;
+        }
+
+        .anniu {
+            border: 1px solid black;
+            padding: 10px;
+            background-color: chartreuse;
+        }
+        .bottom {
+            margin-top: 20px;
+            padding: 10px;
+        }
+        .rightbox{
+            margin: 10px;
+            /* padding: 10px; */
+        }
+        .rightbox button{
+            display: block;
+            margin-bottom: 10px;
+            text-align: center;
+            width: 300px;
+            height: 25px;
+        }
+    </style>
+    <title>DOM查询</title>
+</head>
+
+<body>
+    <!-- dom查询练习 -->
+    <div class="le"></div>
+    <div class="container">
+        <div class="main">
+            <div class="leftbox boder">
+                <h3>你最喜欢哪个城市？</h3>
+                <ul id="city">
+                    <li class="anniu" id="bj">北京</li>
+                    <li class="anniu">深圳</li>
+                    <li class="anniu">杭州</li>
+                    <li class="anniu" id="cd">成都</li>
+                </ul>
+                <br />
+                <h3>你最喜欢哪款单机游戏？</h3>
+                <ul>
+                    <li class="anniu">cs</li>
+                    <li class="anniu">极品飞车</li>
+                    <li class="anniu">魔兽</li>
+                    <li class="anniu">红警</li>
+                </ul>
+                <br />
+                <h3>你手机的操作系统是？</h3>
+                <ul id="phone">
+                    <li class="anniu">ios</li>
+                    <li class="anniu">android</li>
+                    <li class="anniu">windows phone</li>
+                </ul>
+                <br />
+            </div>
+            <div class="bottom boder">
+                gender:<input type="radio" name="gender" value="Male">Male
+                <input type="radio" name="gender" value="Female">Female
+                <br />
+                name:<input type="text" id="username" value="huafeiyu">
+            </div>
+        </div>
+        <div class="rightbox">
+            <button id="btn01">查找#bj节点</button>
+            <button id="btn02">查找所有li节点</button>
+            <button id="btn03">查找name=gender节点</button>
+            <button id="btn04">查找#city下所有节点</button>
+            <button id="btn05">返回#phone的第一个子节点</button>
+            <button id="btn06">返回#bj的父节点</button>
+            <button id="btn07">返回#android的前一个兄弟节点</button>
+            <button id="btn08">返回#username的value属性值</button>
+            <button id="btn09">返回#bj的文本值</button>
+        </div>
+    </div>
+    <div class="ri"></div>
+    <script>
+        //查找#bj节点
+        let btn01 = document.getElementById("btn01");
+        btn01.onclick = function(){
+            alert(bj.innerHTML);
+        };
+        //查找所有li节点
+        let btn02 = document.getElementById("btn02");
+        btn02.onclick = function(){
+            let lis = document.getElementsByTagName("li");
+            for(var i = 0;i<lis.length;i++){
+                alert(lis[i].innerHTML);
+            }
+        };
+        //查找name=gender节点
+        let btn03 = document.getElementById("btn03");
+        btn03.onclick = function(){
+            let inputs = document.getElementsByName("gender");
+            for(var i = 0;i<inputs.length;i++){
+                alert(inputs[i].value)
+            }
+        };
+        //查找#city下所有节点
+        let btn04 = document.getElementById("btn04");
+        btn04.onclick = function(){
+
+        };
+        //返回#phone的第一个子节点
+        let btn05 = document.getElementById("btn05");
+        btn05.onclick = function(){
+            
+        };
+
+        //返回#username的value属性值
+        let btn08 = document.getElementById("btn08");
+        btn08.onclick = function(){
+            let username = document.getElementById("username");
+            alert(username.value);
+        }
+        
+        //返回#bj的文本值
+        let btn09 = document.getElementById("btn09");
+        btn09.onclick = function(){
+            let bj = document.getElementById("bj");
+            alert(bj.innerText);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+.p18{
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+.pblue{
+    /* 强调文字 */
+    color: blue;
+    font-weight: bold;
+}
+.plan{
+    margin-top: 30px;
+}
+.martop10px{
+    margin-top: 10px;
+}
+.martop20px{
+    margin-top: 20px;
+}
+.marbot10px{
+    margin-bottom: 10px;
+}
+.marbot20px{
+    margin-bottom: 20px;
+}
+.libiao{
+    padding-left: 20px;
+}

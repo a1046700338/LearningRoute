@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* 全局a标签样式 */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: green;
+}
+
+/* 定义标题页面醒目样式 */
+.active {
+    color: green;
+}
+
+/* 最大的盒子，用于限制flex布局，从上到下布局 colum */
+.box {
+    width: 100%;
+    height: auto;
+    background: rgba(255, 255, 255, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 导航条 */
+.nav {
+    height: 77px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0px 0px 0px 5px rgba(64, 58, 245, 0.6);
+}
+
+.nav p {
+    width: auto;
+    height: 36px;
+    color: rgba(0, 0, 0, 1);
+    letter-spacing: 2px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.nav p a {
+    cursor: pointer;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px 10px 0px 10px;
+    width: auto;
+}
+
+#caidan {
+    /* 菜单 */
+    width: 35px;
+    height: 40px;
+    mix-blend-mode: normal;
+    flex-grow: 1;
+    margin: 20px 10px 0px 20px;
+}
+
+#caidan_img {
+    cursor: pointer;
+}
+
+/* 导航条的标题样式 */
+.title {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px 0px 0px 20px;
+    text-align: right;
+    font-size: 20px;
+}
+
+.title a {
+    padding-right: 10px;
+    height: 35px;
+}
+
+.title a:hover {
+    border-bottom: 2px solid green;
+    /* 待修改的代码：下划线会多出文字一些 */
+}
+
+/* 大容器 */
+.container {
+    width: 100%;
+    height: auto;
+    background: rgba(204, 204, 204, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 主容器，包含主要内容，根据盒子内容自适应大小 */
+.main {
+    width: auto;
+    height: auto;
+    /* background: rgba(255, 255, 255, 1); */
+    background-color: rgb(249, 249, 249);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    /* flex-wrap: wrap; */
+    margin: 35px 35px 10px 35px;
+    padding: 30px;
+}
+
+
+.hezi {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* 名片容器 */
+.smallbox {
+    width: 240px;
+    height: 54px;
+    /* background: rgba(204, 204, 204, 1); */
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(184, 188, 236);
+    border-radius: 9px;
+    margin-top: 10px;
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* 名片容器内图片样式 */
+.smallbox_img {
+    width: 40px;
+    height: 40px;
+    margin: 5px 5px 0px 0px;
+}
+
+/* 名片容器内标题 */
+.smallbox_title {
+    width: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* 名片容器内小字体 */
+.smallbox_title_smallfont {
+    font-size: 10px;
+}
+
+/* 名片容器悬浮样式 */
+.smallbox:hover {
+    box-shadow: 4px 4px 15px rgba(57, 56, 55, 0.4);
+}
+
+/* 底部版权信息 */
+.footer {
+    text-align: center;
+    width: auto;
+    height: 90px;
+    background: rgba(255, 255, 255, 1);
+
+}

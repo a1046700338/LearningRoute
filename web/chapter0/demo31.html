@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .container{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .main{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .main img{
+            height: 540px;
+            width: 960px;
+            border: 80px solid darkorange;
+        }
+        .btn{
+            margin: -50px auto;
+        }
+        #tips{
+            margin: 0px auto;
+            margin-bottom: -50px;
+            text-align: center;
+            z-index: 1;/* 让它最顶层 */
+        }
+        #previous{
+            width: 80px;
+            margin: auto;
+            display: inline-block;
+        }
+        #next{
+            width: 80px;
+            margin: auto;
+            display: inline-block;
+        }
+    </style>
+    <title>图片切换</title>
+</head>
+<body>
+    <!-- 图片切换练习 -->
+    <div class="container">
+        <div class="main">
+            <div id="tips">
+                
+            </div>
+            <img src="./imgs/1.jpg" alt="1">
+            <div class="btn">
+                <!-- 这里还可扩展，比如“返回首页”，“最后一页” -->
+                <button id="previous">上一张</button>
+                <button id="next">下一张</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        /*
+         *  原理就是，通过数组存放图片路径字符串的方式，访问其数组索引，即访问图片
+         */
+        let imgArr = ["./imgs/1.jpg","./imgs/2.jpg","./imgs/3.png"
+        ,"./imgs/4.jpg","./imgs/5.png","./imgs/6.png",
+        "./imgs/7.jpg","./imgs/8.jpg","./imgs/9.jpg"
+    ];
+        let index = 0;
+        let img = document.getElementsByTagName("img")[0];
+        let previous = document.getElementById("previous");
+        let next = document.getElementById("next");
+        let tips = document.getElementById("tips");
+        tips.innerText = "当前第"+(index+1)+"页，共有"+imgArr.length+"页";
+        previous.onclick = function(){
+            index--;
+            if(index < 0){
+                index = 0;
+            }
+            img.src = imgArr[index];
+            tips.innerText = "当前第"+(index+1)+"页，共有"+imgArr.length+"页";
+        }
+        next.onclick = function(){
+            index++;
+            if(index > imgArr.length-1){
+                index = imgArr.length-1;
+            }
+            img.src = imgArr[index];
+            tips.innerText = "当前第"+(index+1)+"页，共有"+imgArr.length+"页";
+        }
+    </script>
+</body>
+</html>

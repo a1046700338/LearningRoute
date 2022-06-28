@@ -145,12 +145,16 @@
         //查找#city下所有节点
         let btn04 = document.getElementById("btn04");
         btn04.onclick = function(){
-
+            let city = document.getElementById("city");
+            alert(city.children);
         };
         //返回#phone的第一个子节点
         let btn05 = document.getElementById("btn05");
         btn05.onclick = function(){
-            
+            let phone = document.getElementById("phone");
+            // let fir = phone.firstChild;
+            let fir = phone.firstElementChild;//ie9+
+            alert(fir);
         };
 
         //返回#username的value属性值

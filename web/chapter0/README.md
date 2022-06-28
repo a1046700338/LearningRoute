@@ -29,6 +29,8 @@
 - [demo28](demo28.html)  
 - [demo29](demo29.html)  
 - [DOM操作练习](demo30.html)  
+- [图片切换练习](demo31.html)  
+- [图片切换练习](demo32.html)  
 
 # 说明
 re·从<b>零</b>开始的前端  

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom增删改</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            font-size: 18px;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: row;
+            width: auto;
+            height: auto;
+            align-content: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .leftbox {
+            border: 1px solid black;
+            width: 400px;
+            height: auto;
+            text-align: left;
+            padding: 10px;
+            list-style: none;
+        }
+
+        .leftbox li {
+            background-color: chartreuse;
+            border: 1px solid black;
+            display: inline-block;
+            margin-right: 5px;
+            padding: 5px;
+        }
+
+        .rightbox {
+            margin-left: 20px;
+        }
+
+        .rightbox button {
+            display: block;
+            text-align: center;
+            width: 350px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Dom增删改</p>
+    <div id="container">
+        <div class="leftbox">
+            <h3>你最喜欢哪个城市？</h3><br />
+            <ul id="city">
+                <li id="bj">北京</li>
+                <li id="sz">深圳</li>
+                <li id="hz">杭州</li>
+                <li id="cd">成都</li>
+            </ul>
+        </div>
+        <div class="rightbox">
+            <button id="btn01">创建一个“广州”节点，添加到#city下</button><br />
+            <button id="btn02">将“广州”节点插入到#bj前面</button><br />
+            <button id="btn03">使用“广州”节点替换#bj节点</button><br />
+            <button id="btn04">删除#cd节点</button><br />
+            <button id="btn05">读取#city内的html代码</button><br />
+            <button id="btn06">设置#bj内的html代码</button><br />
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            let city = document.getElementById("city");
+            //创建一个“广州”节点，添加到#city下
+            myClick("btn01", function () {
+                let li = document.createElement("li");
+                let gzText = document.createTextNode("广州");
+                li.appendChild(gzText);
+                city.appendChild(li);
+            });
+            //将“广州”节点插入到#bj前面
+            myClick("btn02", function () {
+                let li = document.createElement("li");
+                let gzText = document.createTextNode("广州");
+                li.appendChild(gzText);
+                let bj = document.getElementById("bj");
+                city.insertBefore(li,bj);
+                //insertBefore() 可以指定的子节点前插入新的子节点
+            });
+            //使用“广州”节点替换#bj节点
+            myClick("btn03", function () {
+                city.replaceChild();
+            });
+            //删除#cd节点
+            myClick("btn04", function () {
+                //要先找到#cd的父元素才能进行删除操作
+                //city.removeChild(cd);
+
+                //使用 parentNode 找到父节点更常用
+                let cd = document.getElementById("cd");
+                cd.parentNode.removeChild(cd);
+            });
+            //读取#city内的html代码
+            myClick("btn05", function () {
+                alert(city.innerHTML);
+            });
+            //修改#bj内的html代码
+            myClick("btn06", function () {
+                let bj = document.getElementById("bj");
+                bj.innerHTML = "北京东城"
+                /*
+                 *  bj.innerHTML += "<li>西安</li>";
+                 *  也可以通过 innerHTML 对HTML DOM进行修改、增加、删除操作
+                 *  一般按情况使用
+                 */
+            });
+
+        };
+        function myClick(idstr, fun) {
+            let btn = document.getElementById(idstr);
+            btn.onclick = fun;
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>员工信息</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .table{
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        .table tr th{
+            border: 1px solid black;
+            column-gap: 0px;
+        }
+        .inputBox{
+            margin: 0 auto;
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            width: 300px;
+            padding: 5px;
+        }
+        .inputBox p{
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div >
+        <!-- 员工信息表格 -->
+        <div >
+            <table class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Salary</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th>Tom</th>
+                    <th>Tom@163.com</th>
+                    <th>5000</th>
+                    <th><a href="" id="d1">Delete</a></th>
+                </tr>
+                <tr>
+                    <th>Jerry</th>
+                    <th>Jerry@163.com</th>
+                    <th>8000</th>
+                    <th><a href="" id="d2">Delete</a></th>
+                </tr>
+                <tr>
+                    <th>Bob</th>
+                    <th>Bob@163.com</th>
+                    <th>1000</th>
+                    <th><a href="" id="d3">Delete</a></th>
+                </tr>
+            </table>
+        </div>
+        <!-- 添加新员工表单 -->
+        <div class="inputBox">
+            <h3>添加新员工</h3>
+            <p>name:<input type="text" id=""></p>
+            <p>email:<input type="text" id=""></p>
+            <p>salary:<input type="text" id=""></p>
+            <p><input type="submit" id="submit"></p>
+        </div>
+    </div>
+</body>
+</html>

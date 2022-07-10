@@ -30,8 +30,11 @@
 - [demo29](demo29.html)  
 - [DOM操作练习](demo30.html)  
 - [图片切换练习](demo31.html)  
-- [图片切换练习](demo32.html)  
+- [选择练习](demo32.html)  
+- [Dom增删改](demo33.html)  
+- [Dom增删改2](demo34.html)  
 
 # 说明
 re·从<b>零</b>开始的前端  
-从demo12到demo30是js学习过程
+从demo12到demo32是js学习过程  
+[导航网站](../navigation/index.html)

@@ -86,11 +86,10 @@ a:hover {
 
 .title a {
     padding-right: 10px;
-    height: 35px;
 }
 
 .title a:hover {
-    border-bottom: 2px solid green;
+    border-bottom: 3px solid green;
     /* 待修改的代码：下划线会多出文字一些 */
 }
 
@@ -122,8 +121,10 @@ a:hover {
 .hezi {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
     padding: 20px;
 }
 
@@ -135,28 +136,35 @@ a:hover {
     background-color: rgb(255, 255, 255);
     border: 1px solid rgb(184, 188, 236);
     border-radius: 9px;
-    margin-top: 10px;
-    /* padding: 20px; */
+    margin: 10px 0px 0px 20px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    /* justify-content: space-around; */
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 10px;
 }
 
 /* 名片容器内图片样式 */
 .smallbox_img {
     width: 40px;
     height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 15px;
     margin: 5px 5px 0px 0px;
+    background-size: 40px auto;
+    text-align: center;
+    vertical-align: middle;
 }
 
 /* 名片容器内标题 */
 .smallbox_title {
     width: auto;
-    text-align: center;
+    text-align: left;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 /* 名片容器内小字体 */

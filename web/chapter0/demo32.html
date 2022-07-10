@@ -4,9 +4,74 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>全选练习</title>
 </head>
 <body>
-    
+    <span>你爱好的运动是？</span><input type="checkbox" id="checkedOrNo">全选/全不选<br/>
+    <input type="checkbox" name="items" value="足球">足球<input type="checkbox" name="items" value="篮球">篮球<input type="checkbox" name="items" value="羽毛球">羽毛球<input type="checkbox" name="items" value="乒乓球">乒乓球<br/>
+    <input type="button" id="checkedAll" value="全选">
+    <input type="button" id="checkedNo" value="全不选">
+    <input type="button" id="checkedRe" value="反选">
+    <input type="button" id="submit" value="提交">
+    <script>
+        let idstr;
+        function MyClick(idstr,fun){
+            let btn = document.getElementById(idstr);
+            btn.onclick = fun;
+        };
+        window.onload = function(){
+            let items = document.getElementsByName("items");
+            let checkedCount = 0;
+
+            //全选
+            MyClick("checkedAll",function(){
+                for(let i = 0;i<items.length;i++){
+                    items[i].checked = true;
+                }
+            });
+            //全不选
+            let checkedNo = MyClick("checkedNo",function(){
+                for(let i = 0;i<items.length;i++){
+                    items[i].checked = false;
+                }
+            });
+            //反选
+            MyClick("checkedRe",function(){
+                for(let i = 0;i<items.length;i++){
+                    items[i].checked = !items[i].checked;
+                }
+            });
+            //提交
+            MyClick("submit",function(){
+                for(let i = 0;i<items.length;i++){
+                    if(items[i].checked){
+                        alert(items[i].value);
+                    }
+                };
+                alert("提交成功！");
+            });
+            //全选  or 全不选
+            MyClick("checkedOrNo",function(){
+                for(let i = 0;i<items.length;i++){
+                    // items[i].checked = !items[i].checked;
+                    //有问题。。
+                    items[i].onclick = function(){
+                        checkedAll.checked = true;
+                        for(let j = 0;j<items.length;j++){
+                            if(!items[j].checked){
+                                checkedAll.checked = false;
+                                break;
+                            }
+                        }
+                    };
+                    if(this.checked){
+                        items[i].checked = true;
+                    }else{
+                        items[i].checked = false;
+                    }
+                }
+            })
+        };
+    </script>
 </body>
 </html>

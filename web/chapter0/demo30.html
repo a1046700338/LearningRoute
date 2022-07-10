@@ -95,7 +95,7 @@
                 <h3>你手机的操作系统是？</h3>
                 <ul id="phone">
                     <li class="anniu">ios</li>
-                    <li class="anniu">android</li>
+                    <li class="anniu" id="android">android</li>
                     <li class="anniu">windows phone</li>
                 </ul>
                 <br />
@@ -121,6 +121,17 @@
     </div>
     <div class="ri"></div>
     <script>
+        /*
+         *  通过回调函数来进行调用
+         *  定义一个函数实现多次编写
+         */
+         function myClick(idstr,fun){
+            let btn = document.getElementById(idstr);
+            btn.onclick = fun;
+        }
+        myClick("btn01",function(){
+            alert("dsadasdsd");
+        })
         //查找#bj节点
         let btn01 = document.getElementById("btn01");
         btn01.onclick = function(){
@@ -156,6 +167,18 @@
             let fir = phone.firstElementChild;//ie9+
             alert(fir);
         };
+        //返回#bj的父节点
+        myClick("btn06",function(){
+            let bj = document.getElementById("bj");
+            let pn = bj.parentNode;
+            alert(pn.innerHTML);
+        });
+        //返回#android的前一个兄弟节点
+        myClick("btn07",function(){
+            let android = document.getElementById("android");
+            let bor = android.previousElementSibling;//previousSibling 前一个兄弟节点,previousElementSibling 获取前一个兄弟元素
+            alert(bor.innerHTML);
+        });
 
         //返回#username的value属性值
         let btn08 = document.getElementById("btn08");
@@ -170,6 +193,7 @@
             let bj = document.getElementById("bj");
             alert(bj.innerText);
         }
+
     </script>
 </body>
 

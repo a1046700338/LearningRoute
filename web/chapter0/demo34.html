@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>员工信息</title>
     <style type="text/css">
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
-        .table{
+
+        .table {
             margin: 0 auto;
             margin-top: 50px;
         }
-        .table tr th{
+
+        .table tr th {
             border: 1px solid black;
             column-gap: 0px;
         }
-        .inputBox{
+
+        .inputBox {
             margin: 0 auto;
             margin-top: 50px;
             display: flex;
@@ -29,50 +33,106 @@
             width: 300px;
             padding: 5px;
         }
-        .inputBox p{
+
+        .inputBox p {
             padding: 2px;
         }
     </style>
 </head>
+
 <body>
-    <div >
+    <div>
         <!-- 员工信息表格 -->
-        <div >
+        <div>
             <table class="table">
                 <tr>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Salary</th>
-                    <th></th>
+                    <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
                 </tr>
                 <tr>
                     <th>Tom</th>
                     <th>Tom@163.com</th>
                     <th>5000</th>
-                    <th><a href="" id="d1">Delete</a></th>
+                    <th><a href="deleteEmp?id=001">Delete</a></th>
                 </tr>
                 <tr>
                     <th>Jerry</th>
                     <th>Jerry@163.com</th>
                     <th>8000</th>
-                    <th><a href="" id="d2">Delete</a></th>
+                    <th><a href="deleteEmp?id=002">Delete</a></th>
                 </tr>
                 <tr>
                     <th>Bob</th>
                     <th>Bob@163.com</th>
                     <th>1000</th>
-                    <th><a href="" id="d3">Delete</a></th>
+                    <th><a href="deleteEmp?id=003">Delete</a></th>
                 </tr>
             </table>
         </div>
         <!-- 添加新员工表单 -->
         <div class="inputBox">
             <h3>添加新员工</h3>
-            <p>name:<input type="text" id=""></p>
-            <p>email:<input type="text" id=""></p>
-            <p>salary:<input type="text" id=""></p>
+            <p>name:<input type="text" name="name" id="name"></p>
+            <p>email:<input type="text" id="email"></p>
+            <p>salary:<input type="text" id="salary"></p>
             <p><input type="submit" id="submit"></p>
+
         </div>
     </div>
+    <script>
+        window.onload = function () {
+            /*
+             *  点击超链接，删除一个员工信息
+             *
+             * 
+             */
+            let allA = document.getElementsByTagName("a");
+            for (let i = 0; i < allA.length; i++) {
+                allA[i].onclick = function () {
+                    let flag = confirm("确认删除吗？");
+                    if (flag) {
+                        let tr = this.parentNode.parentNode
+                        tr.parentNode.removeChild(tr);
+                    };
+                    return false;
+                }
+            };
+            //获取表单填写的信息
+
+            let submit = document.getElementById("submit");
+            submit.onclick = function () {
+                let name = document.getElementById("name").value;
+                let email = document.getElementById("email").value;
+                let salary = document.getElementById("salary").value;
+                // alert(name + email + salary);
+                let tr = document.createElement("tr");
+                let nameth = document.createElement("th");
+                let emailth = document.createElement("th");
+                let salaryth = document.createElement("th");
+                let hypterth = document.createElement("th");
+                let nameText = document.createTextNode(name);
+                let emailText = document.createTextNode(email);
+                let salaryText = document.createTextNode(salary);
+                let hypterText = document.createTextNode("Delete");
+
+                let a = document.createElement("a");
+                nameth.appendChild(nameText);
+                emailth.appendChild(nameText);
+                salaryth.appendChild(nameText);
+                a.appendChild(hypterText);
+                hypterth.appendChild(a);
+                tr.appendChild(nameth);
+                tr.appendChild(emailth);
+                tr.appendChild(salaryth);
+                tr.appendChild(hypterth);
+                a.href = "javascript:;"
+                let table = document.getElementsByTagName("table");
+                table.appendChild(tr);
+            };
+        };
+    </script>
 </body>
+
 </html>

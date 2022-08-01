@@ -21,8 +21,7 @@
                 }, 3000);
             }, 2000);
         }, 1000);
-
-
+        // ---------------------------------------------------
         //生成器函数，异步编程
         function one() {
             setTimeout(() => {
@@ -50,6 +49,39 @@
 
         }
         let iterator = gen();
+        // ---------------------------------------------------
+        //模拟获取 用户数据 订单数据 商品数据
+        function getUsers(){
+            setTimeout(()=>{
+                let data = '用户数据';
+                iterators.next(data);
+            },1000);
+        }
+
+        function getOrders(){
+            setTimeout(()=>{
+                let data = '订单数据';
+                iterators.next(data);
+            },1000);
+        }
+
+        function getGoods(){
+            setTimeout(()=>{
+                let data = '商品数据';
+                iterators.next(data);
+            },1000)
+        }
+        
+        function * gen(){
+            let users = yield getUsers();
+            console.log(users);
+            let orders = yield getOrders();
+            console.log(orders);
+            let goods = yield getGoods();
+            console.log(goods);
+        }
+
+        let iterators = gen();
     </script>
 </body>
 

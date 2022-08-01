@@ -2,10 +2,10 @@
 ```
 *
 |-----web
-|           |-------chapter1
-|           |              |------demo1.html
-|           |-------chapterxxx
-|                            |------demoxxx.html
+|        |-------chapter1
+|        |              |------demo1.html
+|        |-------chapterxxx
+|                       |------demoxxx.html
 |
 |
 |

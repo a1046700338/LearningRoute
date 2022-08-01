@@ -41,7 +41,7 @@ web学习库，存放各类html文件
   * more...
   * TODO
     - [] [尚硅谷JS入门到精通](https://www.bilibili.com/video/BV1YW411T7GX?p=101)
-    - [] [学习VUE2]()
+    - [] [学习VUE](https://b23.tv/dUKivg0)
 
 * [更多详情可以访问](https://sakurafeiyu.top/docs/#/about.md)
 

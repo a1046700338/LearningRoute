@@ -82,12 +82,7 @@
         </div>
     </div>
     <script>
-        window.onload = function () {
-            /*
-             *  点击超链接，删除一个员工信息
-             *
-             * 
-             */
+        function deleteMsg() {
             let allA = document.getElementsByTagName("a");
             for (let i = 0; i < allA.length; i++) {
                 allA[i].onclick = function () {
@@ -98,38 +93,32 @@
                     };
                     return false;
                 }
-            };
+            }
+        }
+        window.onload = function () {
+            /*
+             *  点击超链接，删除一个员工信息
+             *
+             * 
+             */
+            deleteMsg();
             //获取表单填写的信息
-
             let submit = document.getElementById("submit");
             submit.onclick = function () {
+
                 let name = document.getElementById("name").value;
                 let email = document.getElementById("email").value;
                 let salary = document.getElementById("salary").value;
-                // alert(name + email + salary);
                 let tr = document.createElement("tr");
-                let nameth = document.createElement("th");
-                let emailth = document.createElement("th");
-                let salaryth = document.createElement("th");
-                let hypterth = document.createElement("th");
-                let nameText = document.createTextNode(name);
-                let emailText = document.createTextNode(email);
-                let salaryText = document.createTextNode(salary);
-                let hypterText = document.createTextNode("Delete");
-
-                let a = document.createElement("a");
-                nameth.appendChild(nameText);
-                emailth.appendChild(nameText);
-                salaryth.appendChild(nameText);
-                a.appendChild(hypterText);
-                hypterth.appendChild(a);
-                tr.appendChild(nameth);
-                tr.appendChild(emailth);
-                tr.appendChild(salaryth);
-                tr.appendChild(hypterth);
-                a.href = "javascript:;"
-                let table = document.getElementsByTagName("table");
+                tr.innerHTML = "<th>" + name + "</th>" +
+                    "<th>" + email + "</th>" +
+                    "<th>" + salary + "</th>" +
+                    "<th>" + a + "</th>";
+                let a = tr.getElementsByTagName("a")[0];
+                a.onclick = deleteMsg;//有问题
+                let table = document.getElementsByTagName("table")[0];
                 table.appendChild(tr);
+                
             };
         };
     </script>

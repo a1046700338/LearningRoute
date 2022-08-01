@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom操作CSS</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #box1{
+            background-color: red;
+            height: 200px;
+            width: 200px;
+        }
+        #box2{
+            border: 1px solid black;
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn01">点我</button>
+    <div id="box1">
+
+    </div>
+    <div id="box2"></div>
+    <script>
+        let btn01 = document.getElementById("btn01");
+        btn01.onclick = function(){
+            let box1 = document.getElementById("box1");
+            box1.style.backgroundColor = "blue";
+            alert(getComputedStyle(box1).width);//getComputedStyle() 方法，获取元素的属性，window的内置函数
+            
+        }
+        let box2 =document.getElementById("box2");
+        box2.onmousemove = function(event){
+            let x = event.clientX;
+            let y = event.clientY;
+            alert("x="+x,"y="+y);
+        }
+    </script>
+</body>
+</html>

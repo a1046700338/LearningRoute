@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>发送AJAX请求</title>
+</head>
+<body>
+    <input type="submit" id="submit" value="点击发送请求">
+    <script>
+        // 接口： https://api.apiopen.top/api/getTime
+        const submit = document.getElementById("submit");
+        submit.onclick = function(){
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST','https://api.apiopen.top/api/getTime');
+            xhr.send();
+            if(xhr.readyState === 4){
+                if(xhr.status <=200 && xhr.status > 300){
+                    console.log(xhr.getAllResponseHeaders);//请求 响应体
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>

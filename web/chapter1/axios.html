@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.27.2/axios.min.js"></script>
+</head>
+
+<body>
+    <button>GET</button>
+    <button>POST</button>
+    <script>
+        axios.default.baseURL = 'http://127.0.0.1:8000';
+        const btns = document.querySelectorAll('button');
+        btns[0].onclick = function () {
+            axios({
+                url: '/delay',
+                method: 'GET',
+                dataType: 'json',
+                params: {
+                    id: 001,
+                    vip: 6
+                },
+                headers: {
+                    name: "das",
+                    age: 18,
+                },
+                data: {
+                    username: "admin",
+                    age : 18,
+                }
+            }).then(value => {
+                console.log(value);
+            })
+        }
+        btns[1].onclick = function () {
+
+        }
+    </script>
+</body>
+
+</html>

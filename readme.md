@@ -8,9 +8,12 @@ If you have any suggestions, please contact me.
 # HTML+CSS+JavaScript
 学习完前端三剑客后，学习vue
 ## 学习路线
-* 前端三剑客（HTML+CSS+JavaScript）
-  * [前端学习路线](https://objtube.gitee.io/front-end-roadmap/#/)
+* web前端三剑客（HTML+CSS+JavaScript）
+  * [前端学习路线](https://objtube.gitee.io/front-end-roadmap/#/) 
+  * [尚硅谷web前端学习路线](https://www.bilibili.com/read/cv5650633)
   * [VUE](https://sakurafeiyu.top/docs/#/zh-cn/vue.md)
+  * [React]()
+  * [Angular]()
   * more...
   * TODO
     - [] [尚硅谷JS入门到精通](https://www.bilibili.com/video/BV1YW411T7GX?p=96)

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery发送ajax请求</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <script crossorigin="anonymous" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2 class="page-header">jQuery发送ajax请求</h2>
+        <button class="btn btn-primary">GET</button>
+        <button class="btn btn-danger">POST</button>
+        <button class="btn btn-info">通用型方法ajax</button>
+    </div>
+    <script>
+        // const btns = document.getElementsByTagName('button');
+        // btns[0].onclick = function(){
+            
+        // }
+        // btns[1].onclick = function(){
+
+        // }
+        // btns[2].onclick = function(){
+
+        // }
+        $('button').eq(0).click(function(){
+            $.get('http://127.0.0.1:8000/jquery',{a:100,b:200,c:300},function(data){
+                console.log(data);
+            });
+        })
+        $('button').eq(2).click(function(){
+            $.post('http://127.0.0.1:8000/jquery',{a:100,b:200,c:300},function(data){
+                console.log(data);
+            });
+        })
+        $('button').eq(0).click(function(){
+            $.ajax({
+                url: 'http://127.0.0.1:8000/jquery',
+                data: {a:100,b:200},
+                type: 'GET',
+                success: function(data){
+                    console.log(data);
+                }
+            });
+        })
+    </script>
+</body>
+</html>

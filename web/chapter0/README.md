@@ -44,6 +44,7 @@ re·从<b>零</b>开始的前端
 # ES6
 > ECMAScript，是一种由Ecma国际(前身为欧洲计算机制造商协会,英文名称是European Computer Manufacturers Association)通过ECMA-262标准化的脚本程序设计语言。  
 
+## 关于ES6的学习推荐看**阮一峰**老师的电子书，[链接](https://es6.ruanyifeng.com/#docs/set-map#WeakSet)
 - 新特性
 - 前端必学
 - [兼容性](https://kangax.github.io/compat-table/es6/)
@@ -267,3 +268,25 @@ iterator.next();
 ```
 
 [生成器函数实例](demo38.html)  
+
+## Promise
+Promise 是 ES6 引入异步编程的新解决方案  
+```js
+const p = new Promise(function(resolve,reject){
+    setTimeout(() => {
+        let data = '数据库中的用户数据';
+        resolve(data);
+        let err = '数据读取失败';
+        reject(err);
+    }, 1000);
+});
+p.then((value)=>{
+    console.log(value);
+},(reason)=>{
+    console.log(reason);
+})
+```
+[Promise读取文件](./js/promiseRaw.js)  
+[Promise发送AJAX请求](demo39.html)  
+
+## [js模块化解析](https://www.bilibili.com/video/BV1K54y1S7zx)

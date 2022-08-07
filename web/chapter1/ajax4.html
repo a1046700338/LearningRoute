@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>重复请求问题</title>
+    <style>
+        #result{
+            width: 200px;
+            height: 100px;
+            border: 1px solid #903;
+        }
+    </style>
+</head>
+<body>
+    <button>点击发送请求</button>
+    <script>
+        let xhr = null;
+        let isSending = false;
+        const btn = document.querySelectorAll('button');
+        btn[0].addEventListener('click',function(){
+            if(isSending) xhr.abort();
+            xhr = new XMLHttpRequest();
+            isSending = true;
+            xhr.open('GET','http://127.0.0.1:8000/delay');
+            xhr.send();
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState === 4){
+                    isSending = false;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

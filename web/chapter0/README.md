@@ -289,4 +289,102 @@ p.then((value)=>{
 [Promise读取文件](./js/promiseRaw.js)  
 [Promise发送AJAX请求](demo39.html)  
 
+## Set
+Set，集合，typeof是object  
+Set会自动去重
+```js
+let s1 = new Set(['好事儿','大事儿','小事儿','坏事儿','小事儿']);
+console.log(s1);//Set{'好事儿','大事儿','小事儿','坏事儿'}
+```
+
+```js
+//元素个数
+s1.size
+//添加新元素
+s1.add('喜事儿')
+//删除元素
+s1.delete('坏事儿')
+//检测元素，返回结果是true 或 false
+s1.has('好事儿')
+//清空
+s1.clear();
+```
+Set 继承了 Iterator 接口，可以使用for...of  
+```js
+for(let v of s1){
+    console.log(v);
+}
+```
+Set实践
+```js
+let arr = [1,2,3,4,5,4,3,2,1];
+// 数组去重
+let result1 = [...new Set(arr)];
+console.log(result1);
+
+// 交集
+let arr2 = [4,5,6,5,6];
+let result2 = [...new Set(arr)].filter(item => {
+    let s2 = new Set(arr2);
+    if(s2.has(item)){
+        return true;
+    }else{
+        return false;
+    }
+});
+console.log(result2);
+
+// 并集
+let result3 = [...new Set(arr)];
+let s3 = new Set(arr2);
+result3.add(s3);
+// let union = [...new Set([...arr,...arr2])];
+// console.log(union);//[1,2,3,4,5,6]
+// 加上扩展运算符之后集合就变成了数组
+
+// 差集
+let diff = [...new Set(arr)].filter(item => !(new Set(arr2).has(item)));
+console.log(diff);//[1,2,3]
+```
+
+## Map
+Map，它类似于对象，也是键值对的集合，但“键”的范围不限于字符串，各种类型的值都可以当作键。Map 也继承了 Iterator 接口。 
+```js
+//创建一个空Map
+let m = new Map();
+//添加元素
+m.set('name','花诽语');
+console.log(m);
+// key : "name"
+// value : "花诽语"
+
+m.set('change',() => console.log("我们可以改变你"));
+
+//清空
+m.clear();
+
+//遍历
+for(let v of m){
+    console.log(v);
+}
+
+```
+
+## class类
+```js
+class Phone(){
+    constructor(brand,price){
+        this.brand = brand;
+        this.price = price;
+    }
+    call(){
+        console.log("我可以打电话");
+    }
+}
+let onePlus = new Phone("1+",2999);
+```
+
 ## [js模块化解析](https://www.bilibili.com/video/BV1K54y1S7zx)
+- 防止命名冲突
+- 代码复用
+- 高维护性

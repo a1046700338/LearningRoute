@@ -20,6 +20,14 @@
 # Vue
 组件化开发  
 把一个单页应用拆分成一个个单独的组件，在父级组件中写好各组件标签，整个应用就可以完成了。  
+## component
+注册一个全局组件，语法格式如下：
+```js
+Vue.component(tagName,options)
+//tagName 组件名，options 配置选项
+//注册后，可以使用以下方式调用组件
+<tagName></tagName>
+```
 
 
 # 学习AJAX
@@ -56,6 +64,25 @@ JSONP， JSONP是一个非官方的跨域解决方案，只支持get请求
 
 [CORS](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/CORS#http_%E5%93%8D%E5%BA%94%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5)，CORS是官方的跨域解决方案，它的特点是不需要客户端做特殊的操作，完全在服务器中进行处理，支持get和post请求。  
 `response.setHeader('Access-Control-Allow-Origin','*');`
+
+
+# Webpack
+Webpack，是一种前端资源构建工具，一个静态模块打包器。  
+Webpack不能处理非js和json的资源。
+## 本地安装
+```shell
+npm install --save-dev webpack@<version>
+```
+version 推荐 v4，`v4.40.2`
+## 打包
+`webpack 路径1 -o 路径2 --mode=development`   会以 `路径1` 为入口文件开始打包，然后输出到 `路径2` 整体打包环境，开发环境  
+```
+--mode=development
+
+mode : development,production
+
+生产环境会压缩js代码
+```
 
 
 # Express的简单使用

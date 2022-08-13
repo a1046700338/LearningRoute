@@ -14,10 +14,13 @@ If you have any suggestions, please contact me.
   * [VUE](https://sakurafeiyu.top/docs/#/zh-cn/vue.md)
   * [React]()
   * [Angular]()
+  * [微信小程序]()
   * more...
   * TODO
-    - [] [尚硅谷JS入门到精通](https://www.bilibili.com/video/BV1YW411T7GX?p=96)
-    - [] [学习VUE2]()
+    - [√] [尚硅谷JS入门到精通](https://www.bilibili.com/video/BV1YW411T7GX?p=106)
+    - [√] [mongoDB基础](https://www.bilibili.com/video/BV18s411E78K)
+    - [] [学习VUE]()
+
     - [] [尚硅谷Mysql](https://www.bilibili.com/video/BV1iq4y1u7vj?p=5)
     - [] [尚硅谷JDBC](https://www.bilibili.com/video/BV1eJ411c7rf?p=6&spm_id_from=pageDriver)
 

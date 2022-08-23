@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>键盘事件</title>
+     <!-- 引入vuejs的开发环境 -->
+     <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <div class="" @keyup>
+            <a href="https://baidu.com/" @click.prevent.stop>点我呀</a><br/><!-- 点击事件，点了a标签后没有默认跳转页面，使用了prevent方法 -->
+            <input type="text" placeholder="输入后按下回车" @keyup.enter="show"/><!-- 键盘事件，在输入框中输入信息后，敲回车键会在控制台打印输入内容 -->
+        </div>
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el:"#root",
+            data:{
+            },
+            methods:{
+                show(e){
+                    console.log(e.target.value);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

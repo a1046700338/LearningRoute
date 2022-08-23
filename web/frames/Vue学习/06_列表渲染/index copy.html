@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表渲染2</title>
+    <!-- 引入vuejs的开发环境 -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <input v-model="keyWord" type="text" placeholder="请输入名字">
+        <br />
+        <h2>搜索结果</h2>
+        <li v-for="n of newList" :key="n.id">
+            {{n.name}}-{{n.age}}
+        </li>
+    </div>
+    <script>
+        // 用 watch 实现列表过滤
+        new Vue({
+            el: "#root",
+            data: {
+                keyWord: '',
+                personList: [
+                    { id: "001", name: "周冬雨", age: 20 },
+                    { id: "002", name: "马冬梅", age: 21 },
+                    { id: "003", name: "周杰伦", age: 18 },
+                    { id: "004", name: "温兆伦", age: 18 },
+                ],
+                newList: []
+            },
+            watch: {
+                keyWord: {
+                    immediate:true,
+                    handler(val) {
+                        this.newList = this.personList.filter((p)=>{
+                            return p.name.indexOf(val) !== -1
+                        })
+                    }
+                }
+
+            }
+        })
+
+        
+    </script>
+</body>
+
+</html>

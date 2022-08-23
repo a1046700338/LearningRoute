@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表渲染</title>
+    <!-- 引入vuejs的开发环境 -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <button @click="add">点击添加老刘</button>
+        <br />
+        <li v-for="(p,index) of personList" :key="p.id">
+            {{p.name}}-{{p.age}}
+        </li>
+    </div>
+    <script>
+        new Vue({
+            el: "#root",
+            data: {
+                keyword: '',
+                personList: [
+                    { id: "001", name: "张三", age: 20 },
+                    { id: "002", name: "李四", age: 21 },
+                    { id: "003", name: "王麻子", age: 18 },
+                ]
+            },
+            methods: {
+                add() {
+                    this.personList.push({ id: "004", name: "老刘", age: 35 })
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

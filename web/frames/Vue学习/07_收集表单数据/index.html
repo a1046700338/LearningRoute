@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入vuejs的开发环境 -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <form  @submit.prevent="demo">
+            <label for="username">账号：</label>
+            <input type="text" v-model.trim="userInfo.username" id="username">
+            <br />
+            <label for="password">密码：</label>
+            <input type="text" v-model.trim="userInfo.password" id="password">
+            <br />
+            <label for="age">年龄：</label>
+            <input type="number" v-model.number="userInfo.age" id="age">
+            <br />
+            性别：
+            男<input type="radio" name="sex" v-model="userInfo.sex" value="male">
+            女<input type="radio" name="sex" v-model="userInfo.sex" value="female">
+            <br />
+            爱好：
+            学习<input type="checkbox" v-model="userInfo.hobby" value="study">
+            干饭<input type="checkbox" v-model="userInfo.hobby" value="eat">
+            打游戏<input type="checkbox" v-model="userInfo.hobby" value="game">
+            <br />
+            城市：
+            <select name="city" v-model="userInfo.city" id="">
+                <option value="bj">北京</option>
+                <option value="cd">成都</option>
+                <option value="gz">广州</option>
+                <option value="sz">深圳</option>
+            </select>
+            <br />
+            其他信息：<textarea v-model.lazy="userInfo.other"></textarea>
+            <br />
+            <input type="checkbox" v-model="userInfo.isRead" name="" id="">
+            阅读并接受《用户协议》
+            <button>提交</button>
+        </form>
+    </div>
+    <script>
+        new Vue({
+            el: "#root",
+            data: {
+                userInfo: {
+                    username: '',
+                    password: '',
+                    age: '',
+                    sex: '',
+                    hobby: [],
+                    city: '',
+                    isRead: false,
+                    other: '',
+                }
+
+            },
+            methods: {
+                demo(){
+                    console.log(JSON.stringify(this.userInfo))
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

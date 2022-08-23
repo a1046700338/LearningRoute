@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绑定样式</title>
+    <!-- 引入vuejs的开发环境 -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <style>
+        .basic{
+            width: 400px;
+            height: 100px;
+            border: 1px solid black;
+        }
+        .happy {
+            width: 400px;
+            height: 100px;
+            background-color: rgb(225, 126, 126);
+            border: 5px solid orange;
+        }
+        .sad {
+            width: 400px;
+            height: 100px;
+            background-color: rgb(95, 90, 90);
+            border: 5px solid green;
+        }
+        .test1 {
+            width: 400px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+        .test2 {
+            font-size: 25px;
+            font-style: oblique;
+        }
+        .test3 {
+            text-align: center;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div class="basic" :class="mood" @click="changeMood">{{name}}</div>
+        <br/>
+        <div :class="classArr">{{name}}</div>
+        <br/>
+        <div :style="{fontSize:fsize+'px'}">{{name}}</div>
+        <br/>
+        <!-- <div class="basic" :class="classObj">{{name}}</div> -->
+
+    </div>
+    <script type="text/javascript">
+        Vue.config.productionTip = false
+        new Vue({
+            el: "#root",
+            data: {
+                name: "你好！",
+                mood: "basic",
+                classArr: ['test1','test2','test3'],//这样做的好处呢就是方便动态管理样式
+                // classObj:{
+                //     test1:false,
+                //     test2:false,
+                //     test3:false
+                // }
+                fsize: 40
+            },
+            methods: {
+                changeMood(){
+                    // this.mood = "happy"
+                    const arr = ['happy','basic','sad']
+                    const index = Math.floor(Math.random()*3)
+                    console.log(arr[index])
+                    this.mood = arr[index]
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

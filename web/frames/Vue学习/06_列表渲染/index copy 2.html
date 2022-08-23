@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表渲染3</title>
+    <!-- 引入vuejs的开发环境 -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <input v-model="keyWord" type="text" placeholder="请输入名字">
+        <button @click="updateMei">点击更新马冬梅的数据</button>
+        <button @click="sortflag = 1">年龄升序</button>
+        <button @click="sortflag = 2">年龄降序</button>
+        <button @click="sortflag = 0">原顺序</button>
+        <br />
+        <h2>搜索结果</h2>
+        <li v-for="(f,index) of filterPerson" :key="f.id">
+            {{f.name}}-{{f.age}}
+        </li>
+    </div>
+    <script>
+        // 用 computed 实现列表排序
+        const vm = new Vue({
+            el: "#root",
+            data: {
+                keyWord: '',
+                sortflag: 0, // sortType排序状态  0 原顺序 , 1 年龄升序,2 年龄降序
+                personList: [
+                    { id: "001", name: "周冬雨", age: 31 },
+                    { id: "002", name: "马冬梅", age: 30 },
+                    { id: "003", name: "周杰伦", age: 18 },
+                    { id: "004", name: "温兆伦", age: 19 },
+                ]
+            },
+            methods:{
+                updateMei(){
+                    this.personList[1] = { id: "002", name: "马老师", age: 50 }; 
+                }
+            },
+            computed:{
+                filterPerson(){
+                    const arr = this.personList.filter((p)=>{
+                        return p.name.indexOf(this.keyWord) !== -1
+                    })
+                    if(this.sortflag){
+                        arr.sort((p1,p2)=>{
+                            return this.sortflag === 1 ? p1.age - p2.age : p2.age - p1.age
+                        })
+                    }
+                    return arr
+                }
+            }
+        })
+
+        
+    </script>
+</body>
+
+</html>

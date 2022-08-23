@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>姓名案例_插值语法实现</title>
+    <!-- 引入vuejs的开发环境 -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        姓：<input type="text" v-model="firstname"><br/>
+        名：<input type="text" v-model="lastname"><br/>
+        全名：<span>{{firstname}}{{lastname}}</span>
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el:"#root",
+            data:{
+                firstname: "张",
+                lastname: "三",
+            }
+        })
+    </script>
+</body>
+
+</html>

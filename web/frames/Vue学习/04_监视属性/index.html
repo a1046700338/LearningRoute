@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>监视属性</title>
+    <!-- 引入vuejs的开发环境 -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h2>今天天气很{{info}}</h2>
+        <button @click="changeWeather">切换天气</button>
+        <p>a：{{numbers.a}}</p>
+        <button @click="numbers.a++">点我a+1</button>
+    </div>
+    <script type="text/javascript">
+        new Vue({
+            el: "#root",
+            data: {
+                isHot: true,
+                numbers:{
+                    a:1,
+                    b:2
+                }
+            },
+            methods: {
+                changeWeather(){
+                    this.isHot = !this.isHot
+                }
+            },
+            computed: {
+                info() {
+                    return this.isHot ? '炎热' : '凉快'
+                }
+            },
+            watch:{
+                info:{
+                    handler(newValue,oldValue){
+                        console.log("修改前："+newValue+"，"+"修改后："+oldValue)
+                    },
+                    immediate:true
+                },
+                //监视多级结构中某个属性的变化
+                'numbers.a':{
+                    handler(){
+                        console.log("a值发生变化")
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

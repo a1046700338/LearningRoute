@@ -13,7 +13,6 @@ export default {
     return {
       title: ''
     }
-
   },
   methods: {
     add() {

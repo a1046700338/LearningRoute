@@ -1,10 +1,11 @@
 <template>
   <div id="app">
     <div class="container">
+      <h1>Todo</h1>
       <!-- 暂时用到的方法是层层传递组件 -->
       <TodoTop :addTodo="addTodo" />
       <TodoList :todos="todos" :checkTodo="checkTodo" :deleteTodo="deleteTodo" />
-      <TodoFooter :todos="todos" :checkTodoAll="checkTodoAll" :chearDoneAll="chearDoneAll"/>
+      <TodoFooter :todos="todos" :checkTodoAll="checkTodoAll" :chearDoneAll="chearDoneAll" />
     </div>
   </div>
 </template>
@@ -23,11 +24,8 @@ export default {
   },
   data() {
     return {
-      todos: [
-        { id: "001", title: "吃饭", done: false },
-        { id: "002", title: "睡觉", done: false },
-        { id: "003", title: "打豆豆", done: false },
-      ],
+      // todos 存放到浏览器本地存储
+      todos: JSON.parse(localStorage.getItem('todos')) || []
     }
   },
   methods: {
@@ -56,12 +54,21 @@ export default {
       })
     },
     //清楚已完成任务
-    chearDoneAll(){
-      this.todos = this.todos.filter((todo)=>{
+    chearDoneAll() {
+      this.todos = this.todos.filter((todo) => {
         return !todo.done
       })
     }
     // 判断勾选状态
+  },
+  watch: {
+    todos: {
+      // 开启深度监视
+      deep: true,
+      handler(value) {
+        localStorage.setItem('todos', JSON.stringify(value))
+      }
+    }
   }
 };
 </script>

@@ -8,7 +8,7 @@
 <script>
 export default {
   name: "TodoFooter",
-  props: ['todos','checkTodoAll','chearDoneAll'],
+  props: ['todos'],
   data() {
     return {
       clearTip: '清除已完成任务',
@@ -17,7 +17,8 @@ export default {
   methods:{
     clearAll(){
       if(confirm('确定清除吗？')){
-        this.chearDoneAll()
+        // this.chearDoneAll()
+        this.$emit('chearDoneAll')
       }
     }
   },
@@ -34,7 +35,8 @@ export default {
         return this.already === this.allCount && this.allCount > 0
       },
       set(value){
-        this.checkTodoAll(value)
+        // this.checkTodoAll(value)
+        this.$emit('checkTodoAll',value)
       }
     }
   }

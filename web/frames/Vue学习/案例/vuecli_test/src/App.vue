@@ -3,9 +3,10 @@
     <div class="container">
       <h1>Todo</h1>
       <!-- 暂时用到的方法是层层传递组件 -->
-      <TodoTop :addTodo="addTodo" />
+      <!-- 回调函数都可以修改为自定义组件，逐渐向事件总线靠拢 -->
+      <TodoTop @addTodo="addTodo" />
       <TodoList :todos="todos" :checkTodo="checkTodo" :deleteTodo="deleteTodo" />
-      <TodoFooter :todos="todos" :checkTodoAll="checkTodoAll" :chearDoneAll="chearDoneAll" />
+      <TodoFooter :todos="todos" @checkTodoAll="checkTodoAll" @chearDoneAll="chearDoneAll" />
     </div>
   </div>
 </template>

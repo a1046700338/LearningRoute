@@ -6,7 +6,7 @@
       <!-- 回调函数都可以修改为自定义组件，逐渐向事件总线靠拢 -->
       
       <TodoTop @addTodo="addTodo" />
-      <TodoList :todos="todos" :checkTodo="checkTodo" :deleteTodo="deleteTodo" />
+      <TodoList :todos="todos" />
       <TodoFooter :todos="todos" @checkTodoAll="checkTodoAll" @chearDoneAll="chearDoneAll" />
     </div>
   </div>

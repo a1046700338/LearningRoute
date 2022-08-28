@@ -4,6 +4,7 @@
       <h1>Todo</h1>
       <!-- 暂时用到的方法是层层传递组件 -->
       <!-- 回调函数都可以修改为自定义组件，逐渐向事件总线靠拢 -->
+      
       <TodoTop @addTodo="addTodo" />
       <TodoList :todos="todos" :checkTodo="checkTodo" :deleteTodo="deleteTodo" />
       <TodoFooter :todos="todos" @checkTodoAll="checkTodoAll" @chearDoneAll="chearDoneAll" />
@@ -70,6 +71,16 @@ export default {
         localStorage.setItem('todos', JSON.stringify(value))
       }
     }
+  },
+  // 挂载事件总线
+  mounted() {
+    this.$bus.$on('checkTodo',this.checkTodo)
+    this.$bus.$on('deleteTodo',this.deleteTodo)
+  },
+  // 注销事件
+  beforeDestroy(){
+    this.$bus.$off('checkTodo')
+    this.$bus.$off('deleteTodo')
   }
 };
 </script>

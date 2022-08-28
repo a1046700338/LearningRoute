@@ -3,9 +3,7 @@
     <TodoItem 
     v-for="t in todos" 
     :key="t.id" 
-    :todos="t" 
-    :checkTodo="checkTodo" 
-    :deleteTodo="deleteTodo"
+    :todos="t"
     />
   </div>
 </template>
@@ -15,7 +13,7 @@ import TodoItem from "./TodoItem.vue";
 export default {
   name: "TodoList",
   components: { TodoItem },
-  props: ['todos', 'checkTodo', 'deleteTodo']
+  props: ['todos']
 };
 </script>
 

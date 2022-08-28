@@ -24,8 +24,7 @@ export default {
   },
   computed: {
     already(){
-      let newList = this.todos.filter(item => item.done === true).length
-      return newList
+      return this.todos.filter(item => item.done === true).length
     },
     allCount() {
       return this.todos.length

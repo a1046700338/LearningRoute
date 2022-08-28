@@ -16,7 +16,7 @@
 export default {
   name: "TodoItem",
   // 声明接收 todo 对象
-  props: ["todos", "checkTodo",'deleteTodo'],
+  props: ["todos"],
   methods: {
     // 判断勾选状态
     lineThrough() {
@@ -29,12 +29,14 @@ export default {
     // 点击多选框 传送id
     handleClick(id) {
       // console.log(id)
-      this.checkTodo(id)
+      // this.checkTodo(id)
+      this.$bus.$emit('checkTodo',id)
     },
     // 点击删除按钮 传送id
     handleDelete(id){
       if(confirm('确定删除吗？')){
-        this.deleteTodo(id)
+        // this.deleteTodo(id)
+        this.$bus.$emit('deleteTodo',id)
       }
     }
   },

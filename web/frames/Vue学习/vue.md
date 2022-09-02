@@ -24,13 +24,14 @@ vue2到vue3
 
 # 目录
 - **[vue基础](#Vue基础)**
-- **[vue-cli]()**
-- **[vue-router]()**
-- **[vuex]()**
-- **[element-ui]()**
-- **[vue3]()**
+- **[vue-cli](#vue-cli)**
+- **[vue-router](#vue-router)**
+- **[vuex](#vuex)**
+- **[vueUI组件库](#VueUI组件库)**
+- **[vue3](#vue3)**
 
 # Vue基础
+vue 有许多语法糖，`:`是`v-on`的简写形式，在标签中给属性加上 冒号 vue 可解析为 js 表达式。
 ## 模板语法
 ## 内置指令
 - v-bind:    绑定，可以简写成冒号
@@ -136,3 +137,219 @@ Vue 脚手架 ，官方提供的 Vue 标准化构建工具
 ...
 </style>
 ```
+
+# vuex
+vuex 是什么：专门在Vue中实现`集中式`状态管理的一个Vue插件，对Vue应用中多个组件的共享状态进行集中式管理（读/写），也是一种组件间的通信方式，且适用于任意组件间的通信。  
+GitHub地址：https://github.com/vuejs/vuex   
+
+什么时候使用 vuex ：  
+1. 多个组件依赖同一个组件时
+2. 来自不同组件的行为需要变更同一状态
+
+生命周期...
+
+使用 vuex，注意 vue2 只能安装 vuex@3版本，vue3 只能安装 vuex@4版本。
+```js
+npm i vuex@3
+```
+
+mapState,mapGetters,mapActions,mapMutations  
+
+使用 mapState,mapGetters 映射 State 和 Getters，实现复用  
+引入 mapState,mapGetters  
+```js
+import { mapState,mapGetters } from 'vuex'
+```
+在`计算属性中设置`
+```js
+    computed:{
+        ...mapState(['sum']),
+        ...mapGetters({demoSum:'demoSum'}) // 简写形式：...mapGetters(['demoSum'])
+		// {key:'value'}
+    },
+```
+
+使用 mapActions,mapMutations   
+```js
+import { mapActions,mapMutations } from 'vuex'
+```
+在 `methods`中设置  
+```js
+    methods:{
+		...mapMutations({increment:'JIA',decrement:'DEC',...})  
+		// {方法名,'Mutations里的名字'}
+    },
+```
+
+命名空间 namespace  
+```
+namespaced: true
+```
+# vue-router
+多个路由经过路由器的管理  
+为了实现单页面应用（SPA）  
+使用 vuex，注意 vue2 只能安装 vuerouter@3版本，vue3 只能安装 vuerouter@4版本。
+```js
+npm i vue-router@3
+```
+引入 vue-router  
+```
+import VueRouter from 'vue-router'
+```
+在 router/index.js 中的配置
+```js
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import HelloHi from '../components/HelloHi'
+
+Vue.use(VueRouter)
+
+export default new VueRouter({
+	routes: [
+		{
+			path: '/',
+			name: 'HelloHi'
+			component: HelloHi
+		}
+	]
+})
+```
+注意点：
+- 路由组件一般存放在`pages`文件夹，非路由组件存放在`component`文件夹
+- 通过切换路由组件，默认是被销毁掉的，需要的时候再挂载的
+## 嵌套路由
+```js
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import HelloHi from '../pages/HelloHi'
+import HomeHi from '../pages/HomeHi'
+import NewSe from '../pages/NewSe'
+
+Vue.use(VueRouter)
+
+export default new VueRouter({
+	routes: [
+		{
+			path: '/',
+			name: 'HelloHi'
+			component: HelloHi
+		}，{
+			path: '/home',
+			name: 'Hone',
+			component: HomeHi,
+			children:[
+				path: 'news',
+				name: 'News',
+				component: NewSe
+			]
+		}
+	]
+})
+```
+## 声明式路由导航
+```html
+<router-link class="xxx" to="/home">Home</router-link>
+```
+> active-class：router-link标签中的api，可以点击状态时更新样式
+
+会将 router-link 解析成 a 标签  
+https://router.vuejs.org/zh/guide/#html  
+
+组件展示指定位置
+```html
+<router-view></router-view>
+```
+
+## 编程式路由导航
+不借助`router-link`实现路由跳转就叫做编程式路由导航  
+一些API：
+```
+this.$router.back()     //前进
+this.$router.forward()	//后退
+this.$router.go(number)	//可前进可后退，取决正数还是负数，number: 步数
+```
+
+## 缓存路由
+作用：让不展示的路由保持挂载，不被销毁
+```
+<keep-alive include="缓存的组件名">
+	<router-view></router-view>
+</keep-alive>
+```
+缓存多个路由组件
+```
+<keep-alive include="['xxx','xxxx']">
+	<router-view></router-view>
+</keep-alive>
+```
+两个生命周期  
+`activated`和`deactivated`
+
+## 路由守卫
+
+
+### 全局前置路由守卫
+
+### 全局后置路由守卫
+
+
+## history模式和hash模式
+hash模式的路径不会请求服务器
+
+在nodejs中解决history模式404的问题
+```
+connect-history-api-fallback
+```
+
+# VueUI组件库
+
+移动端常用UI组件库：
+- Vant
+- Cube UI
+- Mint UI
+
+PC端常用UI组件库：
+- [Element UI](https://element.eleme.cn)
+- IView UI
+
+npm 安装Element UI  
+`npm i element-ui`  
+`main.js`中的配置项
+```js
+// 引入vue
+import Vue from 'vue'
+// 引入elementui组件库
+import ElementUI from 'element-ui';
+// 引入elementui全部样式
+import 'element-ui/lib/theme-chalk/index.css';
+// 引入App组件
+import App from './App.vue'
+
+Vue.config.productionTip = false
+//注册elementui组件库
+Vue.use(ElementUI)
+
+new Vue({
+  render: h => h(App),
+}).$mount('#app')
+
+```
+## 按需引入组件库 https://element.eleme.cn/#/zh-CN/component/quickstart#an-xu-yin-ru  
+
+在`babel.config.js`文件中配置项
+```js
+  presets: [["@babel/preset-env", { "modules": false }]],
+  plugins: [
+    [
+      "component",
+      {
+        "libraryName": "element-ui",
+        "styleLibraryName": "theme-chalk"
+      }
+    ]
+  ]
+}
+
+```
+
+# vue3

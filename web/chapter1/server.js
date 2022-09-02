@@ -45,6 +45,6 @@ app.all('/check-user',(request,response)=>{
     response.send(`handle(${str})`);
 });
 
-app.listen(8000,()=>{
-    console.log("服务已启动，8000 端口监听中...")
+app.listen(8877,()=>{
+    console.log("服务已启动，8877 端口监听中...")
 })
